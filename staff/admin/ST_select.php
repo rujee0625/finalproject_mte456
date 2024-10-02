@@ -25,20 +25,16 @@ if ($_SESSION['user'] == "") {
 
   include("../config.php");
 
-
   $strKeyword = null;
   if (isset($_GET["txtKeyword"])) {
     $strKeyword = $_GET["txtKeyword"];
   }
 
-
   $str = "select * from student where fname like '%$strKeyword%' ";
   $obj = mysqli_query($conn, $str);
   include("../page/pg.php");
 
-
   ?>
-
 
   <div class="card text-center" style="padding:15px;">
     <h4>Student System
@@ -112,7 +108,7 @@ if ($_SESSION['user'] == "") {
             </td>
           </tr>
 
-          <?php
+        <?php
         }
         ?>
 
@@ -128,5 +124,4 @@ if ($_SESSION['user'] == "") {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>

@@ -16,7 +16,6 @@
 
   include("config.php");
 
-
   $strKeyword = null;
   if (isset($_GET["txtKeyword"])) {
     $strKeyword = $_GET["txtKeyword"];
@@ -34,14 +33,14 @@
   </div><br>
 
   <div class="container">
-    <h4>PHP : Select Data
 
+    <h4>PHP : Select Data
       <form name="frmSearch" method="get" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" style="float:right;">
         Keyword : <input name="txtKeyword" type="text" id="txtKeyword" value="<?php echo $strKeyword; ?>">
         <input type="submit" value="Search">
       </form>
-
     </h4><br>
+
     <table class="table table-hover">
       <thead>
         <tr>
@@ -75,6 +74,7 @@
             $grade = "F";
           }
           ?>
+
           <tr>
             <td><?= ++$i; ?></td>
             <td><img src="<?= "admin/" . $result['img']; ?>" width="50"></td>
@@ -85,9 +85,7 @@
             <td><?= $total; ?></td>
             <td><?= $grade; ?></td>
           </tr>
-
           <?php
-
         }
         ?>
 
@@ -98,7 +96,6 @@
     <?php
     include("page/sh.php");
     ?>
-
 
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

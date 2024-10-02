@@ -7,8 +7,8 @@ $final_score = $_POST['final_score'];
 $editID = $_POST['editID'];
 $dstfile = $_POST['pic'];
 
-if (isset($_FILES['fileupload'])) {
-
+if (isset($_FILES['fileupload'])) 
+{
     $filename = $_FILES['fileupload']['name'];
     $srcfile = $_FILES['fileupload']['tmp_name'];
 

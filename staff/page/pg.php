@@ -28,9 +28,6 @@
 		$Num_Pages = (int)$Num_Pages;
 	}
 
-
 	$str .=" order by 1 ASC LIMIT $Page_Start , $Per_Page";
 	$obj  = mysqli_query($conn,$str);
-
-
 ?>

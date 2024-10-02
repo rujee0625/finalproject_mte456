@@ -12,13 +12,10 @@
         }else{
             echo "upload fail.";
         }
-
     }
-
 ?>
 
 <form action="" method="post" enctype="multipart/form-data">
     file : <input type="file" name="fileupload" ><br>
     <input type="submit" >
-
 </form>

@@ -23,11 +23,8 @@ if (isset($_FILES['fileupload'])) {
 
 }
 
-
-
 //connet DB
 include("../config.php");
-
 
 //Query
 $str = "insert into student (img,fname,nname,mid_score,final_score) 
@@ -41,6 +38,4 @@ if ($obj) {
     echo "No No No!..";
     echo "<meta http-equiv='refresh' content='3;URL=ST_insert.php' />";
 }
-
-
 ?>
