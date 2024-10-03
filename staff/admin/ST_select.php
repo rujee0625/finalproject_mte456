@@ -30,41 +30,42 @@ if ($_SESSION['user'] == "") {
     $strKeyword = $_GET["txtKeyword"];
   }
 
-  $str = "select * from student where fname like '%$strKeyword%' ";
+  $str = "select * from teacher where name like '%$strKeyword%' ";
   $obj = mysqli_query($conn, $str);
   include("../page/pg.php");
 
   ?>
 
   <div class="card text-center" style="padding:15px;">
-    <h4>Student System
+    <h4>All contact
       <a href="../logout.php">Log out</a>
 
     </h4>
   </div><br>
 
   <div class="container">
-    <h4>PHP : Select Data
-      <a href="ST_insert.php" class="btn btn-primary">Add New Record</a>
+    <h4>
+      <a href="ST_insert.php" class="btn btn-primary"> Add contact </a>
 
-      <form name="frmSearch" method="get" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" style="float:right;">
+      <!-- <form name="frmSearch" method="get" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" style="float:right;">
         Keyword : <input name="txtKeyword" type="text" id="txtKeyword" value="<?php echo $strKeyword; ?>">
         <input type="submit" value="Search">
-      </form>
+      </form> -->
 
     </h4><br>
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>No.</th>
-          <th>Picture</th>
-          <th>Fullname</th>
-          <th>Nickname</th>
-          <th>Midterm</th>
+          <!-- <th>No.</th> -->
+          <!-- <th>Picture</th> -->
+          <th>Name</th>
+          <!-- <th>Nickname</th> -->
+          <!-- <th>Midterm</th>
           <th>Final</th>
-          <th>Total</th>
-          <th>Grade</th>
-          <th>Action</th>
+          <th>Total</th> -->
+          <th>Email</th>
+          <th>Message</th>
+          <th>Manage</th>
         </tr>
       </thead>
       <tbody>
@@ -72,7 +73,7 @@ if ($_SESSION['user'] == "") {
         <?php
         $i = ($Page - 1) * $Per_Page;
         while ($result = mysqli_fetch_array($obj)) {
-          // Calculate the total score
+          /* // Calculate the total score
           $total = $result['mid_score'] + $result['final_score'];
 
           // Determine the grade based on the total score
@@ -86,18 +87,19 @@ if ($_SESSION['user'] == "") {
             $grade = "D";
           } else {
             $grade = "F";
-          }
+          }*/
           ?>
 
           <tr>
-            <td><?= ++$i; ?></td>
-            <td><img src="<?= $result['img']; ?>" width="50"></td>
-            <td><?php echo $result['fname']; ?></td>
-            <td><?= $result['nname']; ?></td>
-            <td><?= $result['mid_score']; ?></td>
-            <td><?= $result['final_score']; ?></td>
-            <td><?= $total; ?></td>
-            <td><?= $grade; ?></td>
+            <!-- <td><?= ++$i; ?></td> -->
+            <!-- <td><img src="<?= $result['img']; ?>" width="50"></td> -->
+            <td><?php echo $result['name']; ?></td>
+            <!-- <td><?= $result['nname']; ?></td> -->
+            <td><?= $result['email']; ?></td>
+            <td><?= $result['message']; ?></td>
+            <!-- <td><?= $result['manage']; ?></td> -->
+            <!-- <td><?= $total; ?></td> -->
+            <!-- <td><?= $grade; ?></td> -->
             <td>
               <a href="ST_edit.php?edit=<?= $result['id']; ?>" style="color:green">
                 <i class="fa fa-pencil" aria-hidden="true"></i></a>&nbsp

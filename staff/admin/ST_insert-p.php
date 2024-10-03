@@ -1,10 +1,10 @@
 <?php
 
-$fullname = $_POST['fullname'];
-$nname = $_POST['nname'];
-$mid_score = $_POST['mid_score'];
-$final_score = $_POST['final_score'];
-$dstfile = "img/person.png";
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+// $final_score = $_POST['final_score'];
+/* $dstfile = "img/person.png";
 
 if (isset($_FILES['fileupload'])) {
 
@@ -21,14 +21,14 @@ if (isset($_FILES['fileupload'])) {
         $dstfile = "img/person.png";
     }
 
-}
+} */
 
 //connet DB
 include("../config.php");
 
 //Query
-$str = "insert into student (img,fname,nname,mid_score,final_score) 
-        values('$dstfile','$fullname','$nname','$mid_score','$final_score')";
+$str = "insert into teacher (name,email,message) 
+        values('$name','$email','$message')";
 $obj = mysqli_query($conn, $str);
 
 if ($obj) {
