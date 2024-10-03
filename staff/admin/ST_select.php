@@ -101,8 +101,8 @@ if ($_SESSION['user'] == "") {
             <!-- <td><?= $total; ?></td> -->
             <!-- <td><?= $grade; ?></td> -->
             <td>
-              <a href="ST_edit.php?edit=<?= $result['id']; ?>" style="color:green">
-                <i class="fa fa-pencil" aria-hidden="true"></i></a>&nbsp
+              <!-- <a href="ST_edit.php?edit=<?= $result['id']; ?>" style="color:green">
+                <i class="fa fa-pencil" aria-hidden="true"></i></a>&nbsp -->
               <a href="ST_delete.php?del=<?= $result['id']; ?>" style="color:red"
                 onclick="return confirm('Are you sure want to delete this record')">
                 <i class="fa fa-trash" aria-hidden="true"></i>

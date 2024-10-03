@@ -29,7 +29,7 @@
   <div class="container">
     <form action="ST_edit-p.php" method="post" enctype="multipart/form-data">
       <div class="form-group">
-        <label for="fullname">FullName:</label>
+        <label for="name">FullName:</label>
         <input type="text" value="<?= $result['fname']; ?>" class="form-control" name="fullname"
           placeholder="Enter Fullname" required="">
       </div>
